@@ -1,0 +1,15 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:kuncar.dev:sqlty:skill",
+      "displayName": "SQLTy",
+      "type": "application/agent-skills+md",
+      "url": "https://raw.githubusercontent.com/jirikuncar/sqlty/main/skills/sqlty/SKILL.md",
+      "description": "Write, type and check raw SQL in Python with SQLTy.",
+      "representativeQueries": [
+        "type-check raw SQL strings in Python",
+        "infer Python row types from a SQL query"
+      ]
+    }
+  ]
+}

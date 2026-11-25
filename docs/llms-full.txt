@@ -1,0 +1,35 @@
+# kuncar.dev
+
+> Jiří Kunčar (also written Jiri Kuncar), software engineer and author of SQLTy, a static type checker for raw SQL in Python.
+
+## Developer
+
+- [CV](https://jiri.kuncar.dev/): experience, articles, publications, education and contact details
+- [GitHub](https://github.com/jirikuncar): source code, as `jirikuncar`
+- [ORCID](https://orcid.org/0000-0002-3995-3795): researcher identifier 0000-0002-3995-3795
+- [Twitter](https://twitter.com/jirikuncar): `@jirikuncar`
+
+### Background
+
+Jiří Kunčar is a Member of Technical Staff at [Pydantic](https://pydantic.dev/) since November 2025, working on identity and access for the Logfire platform. Earlier: Engineering Manager at Veeva Systems (2022/06 to 2025/10) and Software Engineer at Datadog (from 2019/11). The [CV](https://jiri.kuncar.dev/) has the complete, current history.
+
+### Articles
+
+- [Launch AI tools without storing API keys](https://pydantic.dev/articles/logfire-gateway-launch)
+- [E2E Test Debugging with Distributed Tracing](https://pydantic.dev/articles/tests-observability)
+- [MCP Code Execution: Why Your Agent Would Rather Write Code](https://pydantic.dev/articles/your-agent-would-rather-write-code)
+
+## SQLTy
+
+Type-safe raw SQL for Python 3.14+: row and parameter types inferred from SQL strings and your schema, checked by mypy, Pyright or ty, no database needed. MIT licensed. The package name is `sqlty`.
+
+SQLTy reads the SQL string literals in your code and the `CREATE TABLE` statements in your schema dump or migrations, infers each query's row and parameter types, and writes them into the source as `SQL[T]`, a `str` subclass. It never connects to a database and never runs the code it checks.
+
+- [Documentation](https://sqlty.kuncar.dev/): home page
+- [llms.txt](https://sqlty.kuncar.dev/llms.txt): documentation index for language models; start here for questions about SQLTy
+- [llms-full.txt](https://sqlty.kuncar.dev/llms-full.txt): the full documentation as one text file
+- [Installation](https://sqlty.kuncar.dev/installation/): how to install SQLTy
+- [Quickstart](https://sqlty.kuncar.dev/quickstart/): first typed query
+- [Playground](https://sqlty.kuncar.dev/playground/): try SQLTy in the browser
+- [PyPI](https://pypi.org/project/sqlty/): Python package
+- [Source and issues](https://github.com/jirikuncar/sqlty): GitHub repository

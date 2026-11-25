@@ -16,10 +16,78 @@
 
     <link rel="canonical" href="https://kuncar.dev/">
 
+    <link rel="ard" href="/.well-known/ard.json">
+    <link rel="alternate" type="text/plain" title="llms.txt" href="https://kuncar.dev/llms.txt">
+
     <meta property="og:title" content="kuncar.dev">
+    <meta property="og:site_name" content="kuncar.dev">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://kuncar.dev/">
     <meta property="og:description" content="Jiří Kunčar: CV and sqlty.">
+    <meta property="og:image" content="https://www.gravatar.com/avatar/a18d0a8b41212965d442853804738313?s=512">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Jiří Kunčar">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@jirikuncar">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://kuncar.dev/#website",
+          "url": "https://kuncar.dev/",
+          "name": "kuncar.dev",
+          "description": "Jiří Kunčar: CV and sqlty.",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://jiri.kuncar.dev/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://jiri.kuncar.dev/#person",
+          "name": "Jiří Kunčar",
+          "alternateName": "Jiri Kuncar",
+          "url": "https://jiri.kuncar.dev/",
+          "image": "https://www.gravatar.com/avatar/a18d0a8b41212965d442853804738313?s=512",
+          "jobTitle": "Member of Technical Staff",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Pydantic",
+            "url": "https://pydantic.dev/"
+          },
+          "sameAs": [
+            "https://github.com/jirikuncar",
+            "https://twitter.com/jirikuncar",
+            "https://orcid.org/0000-0002-3995-3795"
+          ]
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://kuncar.dev/#sqlty",
+          "name": "SQLTy",
+          "alternateName": "sqlty",
+          "url": "https://sqlty.kuncar.dev/",
+          "description": "Type-safe raw SQL for Python: row and parameter types inferred from SQL strings and your schema, checked by mypy, Pyright or ty, no database needed.",
+          "codeRepository": "https://github.com/jirikuncar/sqlty",
+          "programmingLanguage": "Python",
+          "license": "https://opensource.org/license/mit",
+          "author": {
+            "@id": "https://jiri.kuncar.dev/#person"
+          },
+          "sameAs": [
+            "https://pypi.org/project/sqlty/"
+          ]
+        }
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
@@ -46,6 +114,18 @@
             </ul>
         </article>
     </main>
+
+    <script>
+        if (document.modelContext) {
+            document.modelContext.registerTool({
+                name: "get_site_info",
+                description: "Returns schema.org JSON-LD about the developer Jiří Kunčar and the SQLTy project, with links to the CV, documentation and source.",
+                inputSchema: { type: "object", properties: {} },
+                annotations: { readOnlyHint: true },
+                execute: async () => document.querySelector('script[type="application/ld+json"]').textContent,
+            })?.catch(console.error);
+        }
+    </script>
 </body>
 
 </html>
