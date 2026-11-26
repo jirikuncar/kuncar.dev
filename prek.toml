@@ -1,0 +1,38 @@
+# Install with `prek install`; run with `prek run --all-files`.
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "sitemap"
+name = "sitemap"
+entry = "python3 scripts/sitemap.py"
+language = "system"
+pass_filenames = false
+files = '^docs/.*\.html$'
+priority = 0
+
+[[repos.hooks]]
+id = "sitemap-xsd"
+name = "sitemap against sitemaps.org XSD"
+entry = "xmllint --noout --schema scripts/vendor/sitemap.xsd docs/sitemap.xml"
+language = "system"
+pass_filenames = false
+files = '^(docs/.*\.html|docs/sitemap\.xml)$'
+priority = 10
+
+[[repos.hooks]]
+id = "check-meta"
+name = "Open Graph and JSON-LD (offline)"
+entry = "python3 scripts/check_meta.py"
+language = "system"
+files = '^docs/.*\.html$'
+priority = 10
+
+[[repos.hooks]]
+id = "schema-validator"
+name = "JSON-LD (validator.schema.org)"
+entry = "python3 scripts/check_schema_online.py"
+language = "system"
+files = '^docs/.*\.html$'
+priority = 10
